@@ -23,6 +23,13 @@ class Time:
         if self.hour >= 24 or self.minute >= 60 or self.second >= 60:
             return False
         return True
+    def __str__(self):
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+
+    def __repr__(self):
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
+    def __add__(self, t2):
+        return self.sum_times(t2)
 
 def sec_to_time(seconds):
     t = Time()
